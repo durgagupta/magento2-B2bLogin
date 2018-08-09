@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!-- /**
+ * @package Uxmill_B2bLogin
+ * @copyright uxmill.co ${date}
+ * @author durga
+ */ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="done" translate="label" sortOrder="200">
+			<label>Uxmill</label>
+		</tab>
+		<section id="b2blogin" translate="label" sortOrder="100"
+			showInDefault="1" showInWebsite="1" showInStore="1">
+			<class>separator-top</class>
+			<label>B2B Login</label>
+			<tab>done</tab>
+			<resource>Uxmill_B2bLogin::config_b2blogin</resource>
+			<group id="parameters" translate="label" type="text" sortOrder="20"
+				showInDefault="1" showInWebsite="1" showInStore="1">
+				<label>Settings</label>
+				<hide_in_single_store_mode>1</hide_in_single_store_mode>
+				<field id="status" translate="label" type="select" sortOrder="1"
+					showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Extension Enabled</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="access_to_website" translate="label" type="select"
+					sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Access to Website</label>
+					<source_model>Uxmill\B2bLogin\Model\Config\Source\Access</source_model>
+				</field>
+
+				<field id="route_list" translate="route list" type="textarea"
+					sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+					<label>Allowed Route list</label>
+					<comment>
+						<label><![CDATA[add comma seperated full route list eg: <br>
+					customer_acccount_login ==> customer/account/login <br>
+					customer_acccount ==> customer/account/* , ]]></label>
+					</comment>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>
